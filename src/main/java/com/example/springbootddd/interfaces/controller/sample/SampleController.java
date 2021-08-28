@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
+
 @Controller
 @RequestMapping("/v1")
 @RequiredArgsConstructor
@@ -17,7 +19,7 @@ public class SampleController {
     private final SampleService sampleService;
 
     @GetMapping("/sample")
-    SampleGetResponse getData(@ModelAttribute("request") SampleGetRequest request) {
+    SampleGetResponse getData(@ModelAttribute("request") @Valid SampleGetRequest request) {
 
         String str = sampleService.getData();
 
