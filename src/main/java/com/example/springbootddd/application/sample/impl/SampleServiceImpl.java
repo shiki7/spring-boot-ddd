@@ -12,7 +12,7 @@ public class SampleServiceImpl implements SampleService {
     private final SampleRepository sampleRepository;
 
     @Override
-    String getData() {
+    public String getData() {
         return sampleRepository.getData();
     }
 }
